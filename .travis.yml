@@ -14,7 +14,6 @@ deploy:
   # Github oauth token
   api_key: 8fc5297d99da7f165fa1531f67d830f32debef22
   file: ./target/wechat-service-1.0.0-SNAPSHOT.jar
-  # 避免 Travis CI在部署之前清空生成的APK文件
-  skip_cleanup: true
+#  skip_cleanup: true
   on:
     tags: true
