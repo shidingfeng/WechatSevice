@@ -7,16 +7,17 @@ com:
   github:
     steven:
       weChatConfig:
-        token: token
-        appId: appId
-        appSercret: appSercret
-      imageDir: /root/
-      keywork: 妹纸
+        token: stevencode
+        appId: wx9f42a2308dd6d508
+        appSercret: f3a8a1b212866682dea5f9b13d89680c
+      imageDir: /root/pythonProject/meizi
+      keyword: 妹子
 
 logging:
   level:
     root: info
     org.springframework.web: info
     org.apache.ibatis: info
+    org.apache.http: info
 
   path: "./logs"

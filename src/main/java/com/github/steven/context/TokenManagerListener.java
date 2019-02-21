@@ -5,6 +5,7 @@ import com.github.steven.config.AutoConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import weixin.popular.support.TokenManager;
 
 import javax.servlet.ServletContextEvent;
@@ -15,6 +16,7 @@ import javax.servlet.ServletContextListener;
  *
  * @author steven
  */
+@Component
 public class TokenManagerListener implements ServletContextListener {
 
     /**

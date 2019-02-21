@@ -50,7 +50,7 @@ public class WechatController {
     @Autowired
     private WechatService wechatService;
 
-    @RequestMapping(value = "/wechat", method = RequestMethod.GET)
+    @RequestMapping(value = "/wechat")
     public String getAuth(HttpServletRequest request) {
         String signature = request.getParameter("signature");
         String timestamp = request.getParameter("timestamp");
@@ -93,7 +93,7 @@ public class WechatController {
                 expireKey.add(key);
             }
 
-            String keyWord = autoConfig.getKeyWord();
+            String keyWord = autoConfig.getKeyword();
             if (keyWord.equals(eventMessage.getContent())) {
                 //创建回复
                 String fromUserName = eventMessage.getFromUserName();

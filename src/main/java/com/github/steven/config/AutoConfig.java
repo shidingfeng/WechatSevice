@@ -15,5 +15,5 @@ public class AutoConfig {
 
     private String imageDir;
 
-    private String keyWord;
+    private String keyword;
 }

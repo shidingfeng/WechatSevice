@@ -36,7 +36,7 @@ public class WechatService {
      * @param file 图片资源
      * @return xmlImageMessage
      */
-    public String sendImage(String fromUserName, String toUserName, File file) {
+    public String sendImage(String toUserName, String fromUserName, File file) {
         String accessToken = TokenManager.getDefaultToken();
         //上传临时素材
         Media media = MediaAPI.mediaUpload(accessToken, MediaType.image, file);
@@ -44,7 +44,7 @@ public class WechatService {
         LOGGER.debug("mediaId:" + mediaId);
 
         //发送图片
-        XMLImageMessage xmlImageMessage = new XMLImageMessage(fromUserName, toUserName, mediaId);
+        XMLImageMessage xmlImageMessage = new XMLImageMessage(toUserName, fromUserName, mediaId);
         return xmlImageMessage.toXML();
     }
 
@@ -54,9 +54,10 @@ public class WechatService {
      * @param toUserName 接收方帐号（收到的OpenID）
      * @return xmlImageMessage
      */
-    public String sendImage(String fromUserName, String toUserName) {
+    public String sendImage(String toUserName, String fromUserName) {
         File image = getImage();
-        return this.sendImage(fromUserName, toUserName, image);
+        LOGGER.info(image.getName());
+        return this.sendImage(toUserName, fromUserName, image);
     }
 
     /**
@@ -77,7 +78,7 @@ public class WechatService {
      */
     private File getRandomImageFile(File file) {
         File[] files = file.listFiles();
-        int randomFileNumber = (int)Math.random() * (files.length-1);
+        int randomFileNumber = (int)(Math.random() * (files.length-1));
         File randomFile = files[randomFileNumber];
         if (randomFile.isDirectory()) {
             return getRandomImageFile(randomFile);
