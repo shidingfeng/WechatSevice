@@ -14,8 +14,7 @@ deploy:
   provider: releases
   # Github oauth token
   skip_cleanup: true
-  api_key:
-    secure: ${GH_TOKEN}
+  api_key: ${GH_TOKEN}
   file: ./target/wechat-service-1.0.0-SNAPSHOT.jar
   on:
     tags: true
