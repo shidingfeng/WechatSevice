@@ -9,10 +9,11 @@ after_success:
   - scp ./target/wechat-service-1.0.0-SNAPSHOT.jar root@47.110.46.159:/root/workspace
 addons:
   ssh_known_hosts: 47.110.46.159
+
 deploy:
   provider: releases
   # Github oauth token
-  api_key: 8fc5297d99da7f165fa1531f67d830f32debef22
+  api_key: ea0c86451f93c67dd99f4306441f012b29a03000
   file: ./target/wechat-service-1.0.0-SNAPSHOT.jar
 #  skip_cleanup: true
   on:
