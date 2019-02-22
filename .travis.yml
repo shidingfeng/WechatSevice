@@ -8,7 +8,7 @@ before_install:
 after_success:
   - mkdir wechat-service
   - cp -r config ./wechat-service/;cp run.sh ./wechat-service;cp ./target/wechat-service-1.0.0-SNAPSHOT.jar ./wechat-service
-  - tar -cvf wechat-service.tar ./wechat-service;gizp -f wechat-service.tar wechat-service.tar.gz
+  - tar -cvf wechat-service.tar ./wechat-service;gzip -f wechat-service.tar wechat-service.tar.gz
   - scp ./wechat-service.tar.gz root@47.110.46.159:/root/workspace
 addons:
   ssh_known_hosts: 47.110.46.159
